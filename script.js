@@ -2,7 +2,7 @@ document.getElementById('addPost').addEventListener('submit', addPost);
 function addPost(e) {
     e.preventDefault();
     let number = document.getElementById('number').value;
-    let text = document.getElementById('text').value;
+    let body = document.getElementById('text').value;
     fetch("https://smsapi-com3.p.rapidapi.com/sms.do?access_token=1fa6c962cfmsh74043953635c7dfp129451jsn74041aa4016f", {
             method: 'POST',
             headers: {
@@ -12,7 +12,7 @@ function addPost(e) {
             },
             "body": JSON.stringify({
                 "to": number,
-                "message": text
+                "message": body
             })
             
         })
